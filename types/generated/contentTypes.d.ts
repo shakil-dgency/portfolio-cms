@@ -362,12 +362,12 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiPricePrice extends Schema.CollectionType {
-  collectionName: 'prices';
+export interface ApiNewsFeedNewsFeed extends Schema.CollectionType {
+  collectionName: 'news_feeds';
   info: {
-    singularName: 'price';
-    pluralName: 'prices';
-    displayName: 'Price';
+    singularName: 'news-feed';
+    pluralName: 'news-feeds';
+    displayName: 'NewsFeed';
   };
   options: {
     draftAndPublish: true;
@@ -378,13 +378,13 @@ export interface ApiPricePrice extends Schema.CollectionType {
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::price.price',
+      'api::news-feed.news-feed',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::price.price',
+      'api::news-feed.news-feed',
       'oneToOne',
       'admin::user'
     > &
@@ -823,7 +823,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::price.price': ApiPricePrice;
+      'api::news-feed.news-feed': ApiNewsFeedNewsFeed;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

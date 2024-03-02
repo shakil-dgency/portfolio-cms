@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * price controller
+ * news-feed controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::price.price');
+module.exports = createCoreController('api::news-feed.news-feed');

@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "prices",
+  "collectionName": "news_feeds",
   "info": {
-    "singularName": "price",
-    "pluralName": "prices",
-    "displayName": "Price"
+    "singularName": "news-feed",
+    "pluralName": "news-feeds",
+    "displayName": "NewsFeed"
   },
   "options": {
     "draftAndPublish": true
