@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_feeds",
+  "info": {
+    "singularName": "news-feed",
+    "pluralName": "news-feeds",
+    "displayName": "NewsFeed"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

@@ -362,32 +362,29 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiFreeMarketingPlanFreeMarketingPlan
-  extends Schema.CollectionType {
-  collectionName: 'free_marketing_plans';
+export interface ApiNewsFeedNewsFeed extends Schema.CollectionType {
+  collectionName: 'news_feeds';
   info: {
-    singularName: 'free-marketing-plan';
-    pluralName: 'free-marketing-plans';
-    displayName: 'Free Marketing Plan';
-    description: '';
+    singularName: 'news-feed';
+    pluralName: 'news-feeds';
+    displayName: 'NewsFeed';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::free-marketing-plan.free-marketing-plan',
+      'api::news-feed.news-feed',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::free-marketing-plan.free-marketing-plan',
+      'api::news-feed.news-feed',
       'oneToOne',
       'admin::user'
     > &
@@ -826,7 +823,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::free-marketing-plan.free-marketing-plan': ApiFreeMarketingPlanFreeMarketingPlan;
+      'api::news-feed.news-feed': ApiNewsFeedNewsFeed;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
