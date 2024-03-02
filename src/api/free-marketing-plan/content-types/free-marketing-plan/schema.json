@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "free_marketing_plans",
+  "info": {
+    "singularName": "free-marketing-plan",
+    "pluralName": "free-marketing-plans",
+    "displayName": "Free Marketing Plan"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
