@@ -368,12 +368,14 @@ export interface ApiNewsFeedNewsFeed extends Schema.CollectionType {
     singularName: 'news-feed';
     pluralName: 'news-feeds';
     displayName: 'NewsFeed';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
+    description: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
