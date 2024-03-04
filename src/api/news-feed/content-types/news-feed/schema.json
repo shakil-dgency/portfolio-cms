@@ -12,11 +12,38 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "feed_title": {
+      "type": "string",
+      "required": true
+    },
+    "feed_description": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "standard"
+      },
+      "required": false,
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "video_url": {
       "type": "string"
     },
-    "description": {
-      "type": "string"
+    "slug": {
+      "type": "uid",
+      "targetField": "feed_title",
+      "required": true
+    },
+    "like_count": {
+      "type": "string",
+      "required": true
     }
   }
 }
