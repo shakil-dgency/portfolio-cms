@@ -388,6 +388,7 @@ export interface ApiNewsFeedNewsFeed extends Schema.CollectionType {
     slug: Attribute.UID<'api::news-feed.news-feed', 'feed_title'> &
       Attribute.Required;
     like_count: Attribute.String & Attribute.Required;
+    seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
