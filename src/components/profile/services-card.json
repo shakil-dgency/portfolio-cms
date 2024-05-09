@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_profile_services_cards",
+  "info": {
+    "displayName": "Services Card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "maxLength": 130
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}

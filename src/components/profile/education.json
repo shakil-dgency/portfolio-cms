@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_profile_educations",
+  "info": {
+    "displayName": "Education"
+  },
+  "options": {},
+  "attributes": {
+    "section_head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.section-starter"
+    },
+    "education_card": {
+      "displayName": "Education Card",
+      "type": "component",
+      "repeatable": true,
+      "component": "profile.education-card"
+    }
+  }
+}

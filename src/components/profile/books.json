@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_profile_books",
+  "info": {
+    "displayName": "Books"
+  },
+  "options": {},
+  "attributes": {
+    "section_head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.section-starter"
+    },
+    "books_card": {
+      "displayName": "Books Card",
+      "type": "component",
+      "repeatable": true,
+      "component": "profile.books-card"
+    }
+  }
+}

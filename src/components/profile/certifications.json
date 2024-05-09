@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_profile_certifications",
+  "info": {
+    "displayName": "Certifications"
+  },
+  "options": {},
+  "attributes": {
+    "section_head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.section-starter"
+    },
+    "certifications_list": {
+      "displayName": "Certifications List",
+      "type": "component",
+      "repeatable": true,
+      "component": "profile.certifications-list"
+    }
+  }
+}

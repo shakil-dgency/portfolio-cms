@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_profile_galleries",
+  "info": {
+    "displayName": "Gallery"
+  },
+  "options": {},
+  "attributes": {
+    "section_head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.section-starter"
+    },
+    "images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

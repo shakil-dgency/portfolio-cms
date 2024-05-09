@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_profile_industries_cards",
+  "info": {
+    "displayName": "Industries Card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "maxLength": 200
+    },
+    "logos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "card_slug": {
+      "type": "string"
+    }
+  }
+}

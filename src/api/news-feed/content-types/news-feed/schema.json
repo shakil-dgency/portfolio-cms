@@ -49,6 +49,20 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
+    },
+    "feed_description_down": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "standard"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "news_feeds"
     }
   }
 }

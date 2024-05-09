@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_profile_industries",
+  "info": {
+    "displayName": "Industries",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "section_head": {
+      "displayName": "Section starter",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.section-starter"
+    },
+    "industries_card": {
+      "displayName": "Industries Card",
+      "type": "component",
+      "repeatable": true,
+      "component": "profile.industries-card"
+    }
+  }
+}

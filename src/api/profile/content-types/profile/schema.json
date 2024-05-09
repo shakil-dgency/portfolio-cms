@@ -1,0 +1,123 @@
+{
+  "kind": "singleType",
+  "collectionName": "profiles",
+  "info": {
+    "singularName": "profile",
+    "pluralName": "profiles",
+    "displayName": "Profile",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "displayName": "Hero",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.hero"
+    },
+    "expertise": {
+      "displayName": "Expertise",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.expertise"
+    },
+    "industries": {
+      "displayName": "Industries",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.industries"
+    },
+    "tools": {
+      "displayName": "Tools",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.tools"
+    },
+    "experience": {
+      "displayName": "Experience",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.experience"
+    },
+    "services": {
+      "displayName": "Services",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.services"
+    },
+    "highlights": {
+      "displayName": "Highlights",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.highlights"
+    },
+    "testimonials": {
+      "displayName": "Testimonials",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.testimonials"
+    },
+    "mentors": {
+      "displayName": "Mentors",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.mentors"
+    },
+    "about": {
+      "displayName": "About",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.about"
+    },
+    "education": {
+      "displayName": "Education",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.education"
+    },
+    "certifications": {
+      "displayName": "Certifications",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.certifications"
+    },
+    "books": {
+      "displayName": "Books",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.books"
+    },
+    "interest": {
+      "displayName": "Interest",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.interest"
+    },
+    "membership": {
+      "displayName": "Membership",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.membership"
+    },
+    "gallery": {
+      "displayName": "Gallery",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.gallery"
+    },
+    "faq": {
+      "displayName": "Faq",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.faq"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_profile_profile_tags",
+  "info": {
+    "displayName": "Profile Tags"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "string"
+    }
+  }
+}

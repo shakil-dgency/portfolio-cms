@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "schedule_calls",
+  "info": {
+    "singularName": "schedule-call",
+    "pluralName": "schedule-calls",
+    "displayName": "Schedule Call",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "schedule_hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.contact-hero"
+    },
+    "cards": {
+      "displayName": "Cards",
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.cards"
+    },
+    "calenly_url": {
+      "type": "string"
+    },
+    "section_title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -362,51 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiNewsFeedNewsFeed extends Schema.CollectionType {
-  collectionName: 'news_feeds';
-  info: {
-    singularName: 'news-feed';
-    pluralName: 'news-feeds';
-    displayName: 'NewsFeed';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    feed_title: Attribute.String & Attribute.Required;
-    feed_description: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
-        {
-          output: 'HTML';
-          preset: 'standard';
-        }
-      >;
-    image: Attribute.Media;
-    video_url: Attribute.String;
-    slug: Attribute.UID<'api::news-feed.news-feed', 'feed_title'> &
-      Attribute.Required;
-    like_count: Attribute.String & Attribute.Required;
-    seo: Attribute.Component<'shared.seo'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::news-feed.news-feed',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::news-feed.news-feed',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -828,6 +783,338 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiCategoryCategory extends Schema.CollectionType {
+  collectionName: 'categories';
+  info: {
+    singularName: 'category';
+    pluralName: 'categories';
+    displayName: 'Category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    news_feeds: Attribute.Relation<
+      'api::category.category',
+      'oneToMany',
+      'api::news-feed.news-feed'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactContact extends Schema.SingleType {
+  collectionName: 'contacts';
+  info: {
+    singularName: 'contact';
+    pluralName: 'contacts';
+    displayName: 'Contact';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contact_hero: Attribute.Component<'contact.contact-hero'>;
+    description_title_firstline: Attribute.String & Attribute.Required;
+    description_title_secondline: Attribute.String;
+    list_descriptor: Attribute.String & Attribute.Required;
+    lists: Attribute.Component<'contact.list', true>;
+    phone_number: Attribute.String & Attribute.Required;
+    form_heading: Attribute.String & Attribute.Required;
+    contact_cta: Attribute.String;
+    form_note: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'standard';
+        }
+      >;
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'Footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    card_title: Attribute.String;
+    card_description: Attribute.String;
+    main_title: Attribute.String;
+    description: Attribute.Text;
+    links: Attribute.Component<'footer.links', true>;
+    social_links: Attribute.Component<'footer.social-links', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNewsFeedNewsFeed extends Schema.CollectionType {
+  collectionName: 'news_feeds';
+  info: {
+    singularName: 'news-feed';
+    pluralName: 'news-feeds';
+    displayName: 'NewsFeed';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    feed_title: Attribute.String & Attribute.Required;
+    feed_description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'standard';
+        }
+      >;
+    image: Attribute.Media;
+    video_url: Attribute.String;
+    slug: Attribute.UID<'api::news-feed.news-feed', 'feed_title'> &
+      Attribute.Required;
+    like_count: Attribute.String & Attribute.Required;
+    seo: Attribute.Component<'shared.seo'>;
+    feed_description_down: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'standard';
+        }
+      >;
+    category: Attribute.Relation<
+      'api::news-feed.news-feed',
+      'manyToOne',
+      'api::category.category'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::news-feed.news-feed',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::news-feed.news-feed',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
+  collectionName: 'privacy_policies';
+  info: {
+    singularName: 'privacy-policy';
+    pluralName: 'privacy-policies';
+    displayName: 'Privacy Policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    policy_data: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProfileProfile extends Schema.SingleType {
+  collectionName: 'profiles';
+  info: {
+    singularName: 'profile';
+    pluralName: 'profiles';
+    displayName: 'Profile';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero: Attribute.Component<'profile.hero'>;
+    expertise: Attribute.Component<'profile.expertise'>;
+    industries: Attribute.Component<'profile.industries'>;
+    tools: Attribute.Component<'profile.tools'>;
+    experience: Attribute.Component<'profile.experience'>;
+    services: Attribute.Component<'profile.services'>;
+    highlights: Attribute.Component<'profile.highlights'>;
+    testimonials: Attribute.Component<'profile.testimonials'>;
+    mentors: Attribute.Component<'profile.mentors'>;
+    about: Attribute.Component<'profile.about'>;
+    education: Attribute.Component<'profile.education'>;
+    certifications: Attribute.Component<'profile.certifications'>;
+    books: Attribute.Component<'profile.books'>;
+    interest: Attribute.Component<'profile.interest'>;
+    membership: Attribute.Component<'profile.membership'>;
+    gallery: Attribute.Component<'profile.gallery'>;
+    faq: Attribute.Component<'profile.faq'>;
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::profile.profile',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::profile.profile',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiScheduleCallScheduleCall extends Schema.SingleType {
+  collectionName: 'schedule_calls';
+  info: {
+    singularName: 'schedule-call';
+    pluralName: 'schedule-calls';
+    displayName: 'Schedule Call';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    schedule_hero: Attribute.Component<'contact.contact-hero'>;
+    cards: Attribute.Component<'contact.cards', true>;
+    calenly_url: Attribute.String;
+    section_title: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::schedule-call.schedule-call',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::schedule-call.schedule-call',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTermsOfServiceTermsOfService extends Schema.SingleType {
+  collectionName: 'terms_of_services';
+  info: {
+    singularName: 'terms-of-service';
+    pluralName: 'terms-of-services';
+    displayName: 'Terms of Service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    terms_data: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::terms-of-service.terms-of-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::terms-of-service.terms-of-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -838,7 +1125,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::news-feed.news-feed': ApiNewsFeedNewsFeed;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -847,6 +1133,14 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::category.category': ApiCategoryCategory;
+      'api::contact.contact': ApiContactContact;
+      'api::footer.footer': ApiFooterFooter;
+      'api::news-feed.news-feed': ApiNewsFeedNewsFeed;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
+      'api::profile.profile': ApiProfileProfile;
+      'api::schedule-call.schedule-call': ApiScheduleCallScheduleCall;
+      'api::terms-of-service.terms-of-service': ApiTermsOfServiceTermsOfService;
     }
   }
 }

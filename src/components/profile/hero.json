@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_profile_heroes",
+  "info": {
+    "displayName": "Hero"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "profile_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "cover_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "tags": {
+      "displayName": "Profile Tags",
+      "type": "component",
+      "repeatable": true,
+      "component": "profile.profile-tags"
+    },
+    "cta": {
+      "type": "string"
+    },
+    "cta_slug": {
+      "type": "string"
+    }
+  }
+}

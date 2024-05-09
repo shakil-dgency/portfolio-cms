@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_profile_highlights_cards",
+  "info": {
+    "displayName": "Highlights Card"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "stat": {
+      "type": "string"
+    }
+  }
+}

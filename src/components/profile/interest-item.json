@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_profile_interest_items",
+  "info": {
+    "displayName": "Interest Item"
+  },
+  "options": {},
+  "attributes": {
+    "interest_title": {
+      "type": "string",
+      "required": true
+    },
+    "color_code": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

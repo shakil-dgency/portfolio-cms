@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_profile_education_cards",
+  "info": {
+    "displayName": "Education Card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subject": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "courses": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

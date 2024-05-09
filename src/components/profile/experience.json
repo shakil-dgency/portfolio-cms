@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_profile_experiences",
+  "info": {
+    "displayName": "Experience"
+  },
+  "options": {},
+  "attributes": {
+    "section_head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.section-starter"
+    },
+    "experience_list": {
+      "displayName": "Experience List",
+      "type": "component",
+      "repeatable": true,
+      "component": "profile.experience-list"
+    }
+  }
+}

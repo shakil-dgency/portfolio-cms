@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_profile_expertise",
+  "info": {
+    "displayName": "Expertise",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "espertise_card": {
+      "displayName": "Expertise Card",
+      "type": "component",
+      "repeatable": true,
+      "component": "profile.expertise-card"
+    },
+    "section_head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.section-starter"
+    }
+  }
+}

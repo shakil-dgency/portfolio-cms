@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_contact_lists",
+  "info": {
+    "displayName": "List"
+  },
+  "options": {},
+  "attributes": {
+    "list": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

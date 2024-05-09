@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_profile_interests",
+  "info": {
+    "displayName": "Interest",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "section_head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "profile.section-starter"
+    },
+    "interest_list": {
+      "displayName": "Interest Item",
+      "type": "component",
+      "repeatable": true,
+      "component": "profile.interest-item"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_profile_certifications_lists",
+  "info": {
+    "displayName": "Certifications List"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "duration": {
+      "type": "string",
+      "required": true
+    },
+    "cta": {
+      "type": "string"
+    },
+    "cta_slug": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
